@@ -11,6 +11,7 @@
   display: block;
   font-size: 12px;
   font-weight: 900;
+  width: 100px;
 }
 .filters li input {
   width: 100%;
