@@ -30,9 +30,6 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   // reset the website body with the new html output
-  let twitterLink = `<li ><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>`;
-  if (variables.twitter != null)
-    twitterLink = ` <li ><a href="${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`;
 
   document.querySelector(
     "#widget_content"
@@ -42,10 +39,10 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -65,10 +62,10 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: null,
+    twitter: "4geeksacademy",
     github: "alesanchezr",
-    linkedin: null,
-    instagram: null,
+    linkedin: "4geeksacademy",
+    instagram: "4geeksacademy",
     name: null,
     lastname: null,
     role: null,
@@ -78,6 +75,7 @@ window.onload = function() {
   render(window.variables); //render the card for the first time
 
   document.querySelectorAll(".picker").forEach(function(elm) {
+    console.log(elm);
     elm.addEventListener("change", function(e) {
       // <- add a listener to every input
       const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
