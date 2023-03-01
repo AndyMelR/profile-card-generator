@@ -64,7 +64,7 @@ window.onload = function() {
     // social media usernames
     twitter: "4geeksacademy",
     github: "alesanchezr",
-    linkedin: "4geeksacademy",
+    linkedin: "school/4geeksacademy",
     instagram: "4geeksacademy",
     name: " Lucy",
     lastname: " Boilette",
